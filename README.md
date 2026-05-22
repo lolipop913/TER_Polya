@@ -1,144 +1,109 @@
-\# Generalized Pólya Urns — Experimental Study of Permanent Domination
+# Urnes de Pólya généralisées — Étude expérimentale de la domination permanente
 
+Projet de TER de Master de Mathématiques (Aix-Marseille Université) consacré à l’étude probabiliste et computationnelle des urnes de Pólya généralisées.
 
+Le projet combine :
+- simulations stochastiques,
+- méthodes de Monte Carlo,
+- mécanismes de renforcement,
+- étude empirique de comportements asymptotiques.
 
-This repository contains a computational and probabilistic study of generalized Pólya urn models, developed as part of a Master’s research project in probability and stochastic processes.
+---
 
+## Contexte mathématique
 
+Les urnes de Pólya sont des modèles classiques de processus stochastiques à renforcement.
 
-The project combines:
+À chaque étape :
+1. une boule est tirée aléatoirement ;
+2. elle est replacée dans l’urne ;
+3. des boules supplémentaires sont ajoutées selon la couleur obtenue.
 
-\- stochastic simulations,
+Le système possède ainsi un effet de mémoire :
+les couleurs fréquemment tirées deviennent progressivement plus probables.
 
-\- Monte Carlo methods,
+Le projet s’intéresse ici à des régimes de renforcement asymétriques.
 
-\- reinforcement dynamics,
+---
 
-\- and asymptotic intuition building.
+## Question étudiée
 
+On étudie l’événement :
 
+\[
+A = \{B_n > W_n,\ \forall n \geq 0\}
+\]
 
-The objective is to experimentally investigate how reinforcement mechanisms influence long-term domination phenomena in generalized urn processes.
+où :
+- \(B_n\) désigne le nombre de boules noires après \(n\) étapes ;
+- \(W_n\) désigne le nombre de boules blanches après \(n\) étapes.
 
+Cet événement correspond à une **domination permanente** des boules noires.
 
+L’objectif est d’étudier :
+- l’influence des conditions initiales ;
+- l’effet des paramètres de renforcement ;
+- la stabilité des trajectoires dominantes ;
+- les probabilités empiriques de domination.
 
-\---
+---
 
-
-
-\# Mathematical Context
-
-
-
-Pólya urns are classical stochastic reinforcement models introduced in the early 20th century.
-
-
-
-At each step:
-
-1\. a ball is drawn randomly from the urn,
-
-2\. the ball is replaced,
-
-3\. additional balls are added depending on the color drawn.
-
-
-
-This creates a feedback mechanism:
-
-\- frequently drawn colors become increasingly likely to be drawn again,
-
-\- producing path dependence and reinforcement effects.
-
-
-
-The project focuses on generalized asymmetric reinforcement regimes.
-
-
-
-\---
-
-
-
-\# Main Research Question
-
-
-
-We study the probabilistic event
-
-
-
-\\\[
-
-A = \\{B\_n > W\_n,\\ \\forall n \\geq 0\\}
-
-\\]
-
-
-
-where:
-
-\- \\(B\_n\\) is the number of black balls after \\(n\\) steps,
-
-\- \\(W\_n\\) is the number of white balls after \\(n\\) steps.
-
-
-
-This event corresponds to \*\*permanent domination\*\*:
-
-the black balls remain strictly dominant during the entire evolution of the process.
-
-
-
-The project investigates:
-
-\- how likely this event is,
-
-\- how reinforcement asymmetry affects it,
-
-\- and how sensitive it is to initial conditions.
-
-
-
-\---
-
-
-
-\# Repository Structure
-
-
+## Structure du projet
 
 ```text
-
-TER\_Polya/
-
+TER_Polya/
 │
-
 ├── articles/
-
-│   Research papers and theoretical references
-
-│
-
 ├── notebooks/
-
-│   01\_basic\_simulations.ipynb
-
-│   02\_permanent\_domination.ipynb
-
-│   03\_parameter\_sensitivity.ipynb
-
+│   ├── 01_basic_simulations.ipynb
+│   ├── 02_permanent_domination.ipynb
+│   └── 03_parameter_sensitivity.ipynb
 │
-
 ├── src/
-
-│   urn.py
-
+│   └── urn.py
 │
-
 ├── README.md
-
 ├── requirements.txt
-
 └── .gitignore
 
+Notebooks
+
+01 — Simulations fondamentales
+dynamique des urnes ;
+renforcement symétrique et asymétrique ;
+évolution des proportions ;
+premières trajectoires stochastiques.
+
+02 — Domination permanente
+étude de l’événement A ;
+simulations de Monte Carlo ;
+estimation empirique de probabilités ;
+rôle des fluctuations initiales.
+
+03 — Sensibilité des paramètres
+influence des conditions initiales ;
+asymétrie du renforcement ;
+stabilité probabiliste des trajectoires ;
+comparaison expérimentale des régimes.
+
+Installation
+git clone https://github.com/lolipop913/TER_Polya.git
+cd TER_Polya
+python -m venv .venv
+
+Activation de l’environnement
+
+Windows
+.venv\Scripts\activate
+
+Linux / macOS
+source .venv/bin/activate
+
+Installation des dépendances
+pip install -r requirements.txt
+
+Auteur
+Henri Vasserot
+Master de Mathématiques — Aix-Marseille Université
+
+TER — Processus stochastiques et urnes de Pólya
