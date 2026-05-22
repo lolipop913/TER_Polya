@@ -65,45 +65,47 @@ TER_Polya/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
 
-Notebooks
+---
 
-01 — Simulations fondamentales
-dynamique des urnes ;
-renforcement symétrique et asymétrique ;
-évolution des proportions ;
-premières trajectoires stochastiques.
+## Notebooks
 
-02 — Domination permanente
-étude de l’événement A ;
-simulations de Monte Carlo ;
-estimation empirique de probabilités ;
-rôle des fluctuations initiales.
+### 01 — Simulations fondamentales
 
-03 — Sensibilité des paramètres
-influence des conditions initiales ;
-asymétrie du renforcement ;
-stabilité probabiliste des trajectoires ;
-comparaison expérimentale des régimes.
+- dynamique des urnes ;
+- renforcement symétrique et asymétrique ;
+- évolution des proportions ;
+- premières trajectoires stochastiques.
+
+### 02 — Domination permanente
+
+- étude de l’événement \(A\) ;
+- simulations de Monte Carlo ;
+- estimation empirique de probabilités ;
+- rôle des fluctuations initiales.
+
+### 03 — Sensibilité des paramètres
+
+- influence des conditions initiales ;
+- asymétrie du renforcement ;
+- stabilité probabiliste des trajectoires ;
+- comparaison expérimentale des régimes.
 
 Installation
 git clone https://github.com/lolipop913/TER_Polya.git
 cd TER_Polya
+
 python -m venv .venv
-
 Activation de l’environnement
-
 Windows
 .venv\Scripts\activate
-
 Linux / macOS
 source .venv/bin/activate
-
 Installation des dépendances
 pip install -r requirements.txt
-
 Auteur
+
 Henri Vasserot
 Master de Mathématiques — Aix-Marseille Université
-
 TER — Processus stochastiques et urnes de Pólya
