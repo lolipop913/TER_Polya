@@ -33,14 +33,14 @@ class PolyaUrn:
     
     def simulate(self, n_steps):
 
-    for _ in range(n_steps):
-        self.draw()
+        for _ in range(n_steps):
+            self.draw()
 
     def always_black_leading(self):
 
-    for state in self.history:
+        for state in self.history:
 
-        if state["black"] <= state["white"]:
-            return False
+            if state["black"] <= state["white"]:
+                return False
 
-    return True
+        return True
