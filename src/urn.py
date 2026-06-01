@@ -42,5 +42,24 @@ class PolyaUrn:
 
             if state["black"] <= state["white"]:
                 return False
-
         return True
+    
+
+    def stabilization_time(self):
+
+        black_path = np.array(
+            [state["black"] for state in self.history]
+        )
+
+        white_path = np.array(
+            [state["white"] for state in self.history]
+        )
+
+        dominance = black_path > white_path
+
+        for t in range(len(dominance)):
+
+            if np.all(dominance[t:]):
+                return t
+
+        return None
