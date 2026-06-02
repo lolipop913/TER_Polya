@@ -72,8 +72,8 @@ A = \{B_n > W_n,\ \forall n \geq 0\}
 $$
 
 où :
-- B_n désigne le nombre de boules noires après `n` étapes ;
-- W_n désigne le nombre de boules blanches après `n` étapes.
+- Bₙ désigne le nombre de boules noires après n étapes ;
+- Wₙ désigne le nombre de boules blanches après n étapes.
 
 Cet événement correspond à une **domination permanente** des boules noires.
 
