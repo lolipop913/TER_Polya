@@ -24,22 +24,15 @@ ainsi que sur les travaux fondateurs :
 
 L’objectif du TER est d’étudier théoriquement et expérimentalement le phénomène suivant :
 
-\[
-\mathbb P(B_n > W_n,\ \forall n \geq 0) > 0
-\]
+$$
+\mathbb{P}(B_n > W_n,\ \forall n \geq 0) > 0
+$$
 
 dans des urnes de Pólya asymétriques.
 
 Autrement dit :
 
 > une couleur initialement dominante peut conserver son avance à tout instant avec probabilité strictement positive.
-
-Le projet vise à :
-- reproduire les résultats asymptotiques connus ;
-- étudier expérimentalement les trajectoires dominantes ;
-- analyser l’influence des paramètres de renforcement ;
-- explorer les temps de stabilisation ;
-- relier simulations numériques et preuve théorique.
 
 ---
 
@@ -52,16 +45,15 @@ Les urnes de Pólya sont des modèles classiques de processus stochastiques à r
 2. elle est replacée dans l’urne ;
 3. des boules supplémentaires sont ajoutées selon la couleur obtenue.
 
-Le système possède ainsi un effet de mémoire :
-les couleurs fréquemment tirées deviennent progressivement plus probables.
+Le système possède ainsi un effet de mémoire : les couleurs fréquemment tirées deviennent progressivement plus probables.
 
 Le projet s’intéresse ici à des régimes de renforcement asymétriques.
 
 Dans le cas :
 
-\[
+$$
 m_b > m_w
-\]
+$$
 
 les boules noires deviennent asymptotiquement dominantes.
 
@@ -75,13 +67,15 @@ Cependant, le TER étudie une question plus forte :
 
 On étudie l’événement :
 
-A = {B_n > W_n, ∀ n ≥ 0}
+$$
+A = \{B_n > W_n,\ \forall n \geq 0\}
+$$
 
 où :
 - `B_n` désigne le nombre de boules noires après `n` étapes ;
 - `W_n` désigne le nombre de boules blanches après `n` étapes.
 
-Cet événement correspond à une domination permanente des boules noires.
+Cet événement correspond à une **domination permanente** des boules noires.
 
 L’objectif est d’étudier :
 - l’influence des conditions initiales ;
@@ -92,30 +86,9 @@ L’objectif est d’étudier :
 
 ---
 
-## Structure scientifique du projet
-
-Le travail est organisé en deux parties principales.
-
-### Partie I — Théorie probabiliste
-
-- urnes de Pólya classiques ;
-- renforcement asymétrique ;
-- domination asymptotique ;
-- embedding en processus de branchement ;
-- preuve du théorème de domination permanente.
-
-### Partie II — Validation computationnelle
-
-- simulations stochastiques ;
-- estimation Monte Carlo ;
-- validation statistique ;
-- étude paramétrique ;
-- visualisation des trajectoires.
-
----
-
 ## Structure du projet
 
+```text
 TER_Polya/
 │
 ├── articles/
@@ -140,6 +113,7 @@ TER_Polya/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
 
 ---
 
@@ -153,17 +127,13 @@ TER_Polya/
 - premières trajectoires stochastiques ;
 - domination asymptotique empirique.
 
----
-
 ### 02 — Domination permanente
 
-- étude de l’événement \(A\) ;
+- étude de l’événement `A` ;
 - simulations de Monte Carlo ;
 - estimation empirique de probabilités ;
 - rôle des fluctuations initiales ;
 - validation empirique du théorème de Janson.
-
----
 
 ### 03 — Sensibilité des paramètres
 
@@ -173,8 +143,6 @@ TER_Polya/
 - comparaison expérimentale des régimes ;
 - étude des transitions de domination.
 
----
-
 ### 04 — Temps de domination asymptotique
 
 - étude des temps de stabilisation ;
@@ -182,8 +150,6 @@ TER_Polya/
 - domination asymptotique ;
 - distribution des temps de convergence ;
 - analyse des trajectoires persistantes.
-
----
 
 ### 05 — Validation statistique
 
@@ -199,13 +165,17 @@ TER_Polya/
 
 Le cœur du projet est implémenté dans :
 
+```text
 src/urn.py
+```
 
-La classe principale :
+La classe principale est :
 
+```text
 PolyaUrn
+```
 
-permet :
+Elle permet :
 - la simulation des urnes ;
 - le suivi des trajectoires ;
 - la détection de domination permanente ;
@@ -215,19 +185,9 @@ permet :
 
 ## Références principales
 
-### Articles et ouvrages
-
-- Svante Janson,
-  *A Note on Pólya Urns: The Winner May Lead All the Time*,
-  arXiv, 2025.
-
-- G. Pólya,
-  *Sur quelques points de la théorie des probabilités*,
-  Annales de l’Institut Henri Poincaré, 1930.
-
-- K. B. Athreya & P. E. Ney,
-  *Branching Processes*,
-  Springer, 1972.
+- Svante Janson, *A Note on Pólya Urns: The Winner May Lead All the Time*, arXiv, 2025.
+- G. Pólya, *Sur quelques points de la théorie des probabilités*, Annales de l’Institut Henri Poincaré, 1930.
+- K. B. Athreya & P. E. Ney, *Branching Processes*, Springer, 1972.
 
 ---
 
@@ -236,12 +196,14 @@ permet :
 Le projet se poursuit désormais par :
 
 ### Rédaction de l’article scientifique
+
 - formalisation mathématique ;
 - présentation théorique ;
 - intégration des résultats expérimentaux ;
 - discussion probabiliste.
 
 ### Construction de la soutenance
+
 - création des diapositives ;
 - synthèse visuelle des résultats ;
 - articulation théorie / simulations ;
@@ -253,36 +215,42 @@ Le projet se poursuit désormais par :
 
 ### Clonage du dépôt
 
+```bash
 git clone https://github.com/lolipop913/TER_Polya.git
 cd TER_Polya
-
----
+```
 
 ### Création de l’environnement virtuel
 
+```bash
 python -m venv .venv
+```
 
 ### Activation de l’environnement
 
-#### Windows
+Windows :
 
+```bash
 .venv\Scripts\activate
+```
 
-#### Linux / macOS
+Linux / macOS :
 
+```bash
 source .venv/bin/activate
-
----
+```
 
 ### Installation des dépendances
 
+```bash
 pip install -r requirements.txt
+```
 
 ---
 
 ## Auteur
 
-Henri Vasserot
-Master de Mathématiques — Aix-Marseille Université
+Henri Vasserot  
+Master de Mathématiques — Aix-Marseille Université  
 
 TER — Processus stochastiques et urnes de Pólya
